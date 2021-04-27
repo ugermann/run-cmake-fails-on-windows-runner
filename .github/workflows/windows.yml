@@ -20,7 +20,7 @@ jobs:
       - uses: lukka/run-cmake@v3
         with:
           buildDirectory: ${{ github.workspace }}/build
-          buildWithCMakeArgs: '-- -v -G Ninja'
+          buildWithCMakeArgs: '-G Ninja -- -v'
           # cmakeAppendedArgs: ''
           cmakeListsOrSettingsJson: CMakeListsTxtAdvanced
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
