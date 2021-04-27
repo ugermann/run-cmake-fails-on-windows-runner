@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: lukka/run-vcpkg@v4
         with:
-          # vcpkgArguments: 
+          vcpkgArguments: 
           vcpkgGitCommitId: 6185aa76504a5025f36754324abf307cc776f3da
           vcpkgDirectory: ${{ github.workspace }}/vcpkg/
           vcpkgTriplet: x64-windows-static          
