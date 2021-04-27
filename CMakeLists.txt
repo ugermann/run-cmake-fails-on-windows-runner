@@ -7,4 +7,5 @@ set(CMAKE_BUILD_TYPE "Release")
 project (helloWorld CXX)
 
 set(CMAKE_CXX_STANDARD 11)
+add_subdirectory(foo)
 add_subdirectory(src)
