@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: lukka/run-vcpkg@v4
+        id: runvcpkg
         with:
           vcpkgArguments: pcre2
           vcpkgGitCommitId: 6185aa76504a5025f36754324abf307cc776f3da
@@ -23,5 +24,6 @@ jobs:
           cmakeAppendedArgs: '-G Ninja'
           cmakeListsOrSettingsJson: CMakeListsTxtAdvanced
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
+          vcpkgTriplet: x64-windows-static
           useVcpkgToolchainFile: true
           
