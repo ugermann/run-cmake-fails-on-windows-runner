@@ -17,5 +17,5 @@ jobs:
           cmakeListsOrSettingsJson: CMakeListsTxtBasic
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
       - name: "List produced executable"
-        run: ls "${{ github.workspace }}/build/hello*"
+        run: ls "${{ github.workspace }}/build/"
         shell: bash
