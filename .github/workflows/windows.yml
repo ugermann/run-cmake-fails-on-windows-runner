@@ -8,22 +8,10 @@ jobs:
     name: Demo
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      # - uses: lukka/run-vcpkg@v4
-      #   id: runvcpkg
-      #   with:
-      #     vcpkgArguments: pcre2
-      #     vcpkgGitCommitId: 6185aa76504a5025f36754324abf307cc776f3da
-      #     vcpkgDirectory: ${{ github.workspace }}/vcpkg/
-      #     vcpkgTriplet: x64-windows-static          
-          
-      - uses: lukka/run-cmake@v3
+      - uses: actions/checkout@latest
+      - uses: lukka/run-cmake@latest
         with:
           buildDirectory: ${{ github.workspace }}/build
-          buildWithCMakeArgs: '-- -v -G Ninja'
-          # cmakeAppendedArgs: ''
-          cmakeListsOrSettingsJson: CMakeListsTxtAdvanced
+          cmakeAppendedArgs: '-G Ninja'
+          cmakeListsOrSettingsJson: CMakeListsTxtBasic
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
-          # vcpkgTriplet: x64-windows-static
-          # useVcpkgToolchainFile: true
-          
