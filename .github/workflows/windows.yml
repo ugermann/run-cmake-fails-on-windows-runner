@@ -16,3 +16,6 @@ jobs:
           cmakeAppendedArgs: '-G Ninja -L'
           cmakeListsOrSettingsJson: CMakeListsTxtBasic
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
+      - name: "List all files"
+        run: find $RUNNER_WORKSPACE
+        shell: bash
