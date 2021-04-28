@@ -16,6 +16,6 @@ jobs:
           cmakeAppendedArgs: '-G Ninja -DWITH_SET_TARGET_PROPERTIES_OUTPUT_NAME=on '
           cmakeListsOrSettingsJson: CMakeListsTxtBasic
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
-      - name: "List all files in build directory"
-        run: find "${{ github.workspace }}/build"
+      - name: "List build directory"
+        run: ls "${{ github.workspace }}/build/"
         shell: bash
