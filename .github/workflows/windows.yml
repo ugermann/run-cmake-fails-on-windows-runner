@@ -9,7 +9,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: lukka/run-cmake@latest
+      - uses: actions/get-cmake@latest
+      - uses: lukka/run-cmake@v3
         with:
           buildDirectory: ${{ github.workspace }}/build
           cmakeAppendedArgs: '-G Ninja'
