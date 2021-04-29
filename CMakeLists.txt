@@ -5,12 +5,17 @@ set(CMAKE_BUILD_TYPE "Release")
 
 # cmake -G Ninja fails on Windows if the target property OUTPUT_NAME 
 # is set explicit in an included subdirectory.
-option(WITH_SET_TARGET_PROPERTIES_OUTPUT_NAME 
-  "Set target output name in added subdirectory" off)
+option(SHOW_ERROR1 "Show error setting target property OUTPUT_NAME in root" off)
+option(SHOW_ERROR2 "Show error setting target property OUTPUT_NAME in subdirectory" off)
 
 # see if setting output name explicitly works from the root directory
-add_executable(helloWorld0 src/hello_world.cpp)
-set_target_properties(helloWorld0 PROPERTIES OUTPUT_NAME ${CMAKE_BINARY_PATH}/helloWorld0.exe)
+add_executable(helloWorld1 src/main.cpp)
+if (SHOW_ERROR1)
+  set_target_properties(helloWorld1 PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/helloWorld1.exe")
+else(SHOW_ERROR1)
+  set_target_properties(helloWorld1 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+endif(SHOW_ERROR1)
+  
 
 # now try it from a subdirectory
 add_subdirectory(src)

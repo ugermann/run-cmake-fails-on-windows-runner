@@ -1,0 +1,21 @@
+name: Demo
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  demo:
+    name: Error2
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: lukka/get-cmake@latest
+      - uses: lukka/run-cmake@v3
+        with:
+          buildDirectory: ${{ github.workspace }}/build
+          cmakeAppendedArgs: '-G Ninja -DSHOW_ERROR2=on '
+          cmakeListsOrSettingsJson: CMakeListsTxtAdvanced
+          cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
+      - name: "List produced executable"
+        run: ls "${{ github.workspace }}/build/"
+        shell: bash
