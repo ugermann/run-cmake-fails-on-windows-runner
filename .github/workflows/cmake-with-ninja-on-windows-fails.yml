@@ -14,7 +14,7 @@ jobs:
         with:
           buildDirectory: ${{ github.workspace }}/build
           cmakeAppendedArgs: '-DWITH_SET_TARGET_PROPERTIES_OUTPUT_NAME="ON" -GNinja'
-          cmakeListsOrSettingsJson: CMakeListsTxtBasic
+          cmakeListsOrSettingsJson: CMakeListsTxtAdvanced
           cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
       - name: "List build directory"
         run: ls "${{ github.workspace }}/build"
