@@ -9,8 +9,8 @@ option(WITH_SET_TARGET_PROPERTIES_OUTPUT_NAME
   "Set target output name in added subdirectory" off)
 
 # see if setting output name explicitly works from the root directory
-add_executable(helloWorld0 src/main.cpp)
-set_target_properties(helloWorld0 PROPERTIES OUTPUT_NAME ${CMAKE_BINARY_PATH}/helloWorld0)
+add_executable(helloWorld0 src/hello_world.cpp)
+set_target_properties(helloWorld0 PROPERTIES OUTPUT_NAME ${CMAKE_BINARY_PATH}/helloWorld0.exe)
 
 # now try it from a subdirectory
 add_subdirectory(src)
