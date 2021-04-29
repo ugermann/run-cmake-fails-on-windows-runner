@@ -7,4 +7,10 @@ set(CMAKE_BUILD_TYPE "Release")
 # is set explicit in an included subdirectory.
 option(WITH_SET_TARGET_PROPERTIES_OUTPUT_NAME 
   "Set target output name in added subdirectory" off)
+
+# see if setting output name explicitly works from the root directory
+add_executable(helloWorld0 src/main.cpp)
+target_add_properties(helloWorld0 PROPERTIES OUTPUT_NAME ${CMAKE_BINARY_PATH}/helloWorld0)
+
+# now try it from a subdirectory
 add_subdirectory(src)
