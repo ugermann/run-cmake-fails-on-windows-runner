@@ -1,7 +1,7 @@
 name: Error1
 on:
   push:
-    branches: [ master ]
+    branches: [ try-fix ]
 
 jobs:
   demo:

@@ -10,12 +10,9 @@ option(SHOW_ERROR2 "Show error setting target property OUTPUT_NAME in subdirecto
 
 # see if setting output name explicitly works from the root directory
 add_executable(helloWorld1 src/main.cpp)
-if (SHOW_ERROR1)
-  set_target_properties(helloWorld1 PROPERTIES OUTPUT_NAME "${CMAKE_BINARY_DIR}/helloWorld1")
-else(SHOW_ERROR1)
-  set_target_properties(helloWorld1 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-endif(SHOW_ERROR1)
-  
+set_target_properties(helloWorld1 PROPERTIES
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+  OUTPUT_NAME "${CMAKE_BINARY_DIR}/helloWorld1")
 
 # now try it from a subdirectory
 add_subdirectory(src)
